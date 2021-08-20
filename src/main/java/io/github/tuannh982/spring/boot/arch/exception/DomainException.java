@@ -9,6 +9,18 @@ public abstract class DomainException extends Exception {
     private Map<String, String> values;
     private Object data;
 
+    protected DomainException(String s, Map<String, String> values, Object data) {
+        super(s);
+        this.values = values;
+        this.data = data;
+    }
+
+    protected DomainException(String s) {
+        super(s);
+        this.values = null;
+        this.data = null;
+    }
+
     protected DomainException(Map<String, String> values, Object data) {
         this.values = values;
         this.data = data;
